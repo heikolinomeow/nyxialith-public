@@ -1,6 +1,6 @@
-# NYXIALITH :: SIGNAL PROTOCOL
+# NYXIALITH OS :: README
 
-> Open-source AI operating system.
+Open-source AI operating system.
 
 ## STATUS:: PRE-ALPHA
 
@@ -13,18 +13,21 @@
 
 Nyxialith is a local-first AI operating system that runs entirely on your hardware. No subscriptions, no surveillance, no cloud dependencies.
 
-**Core capabilities:**
+**v1 Core capabilities:**
+- **Native runtime** – High-performance inference engine (`llama.cpp` integration)
+- **Daemon service** – Background process for model management and request handling
+- **CLI & UI** – Command-line tools and user-friendly interface
 - **Agents** – Autonomous reasoning loops with tool access
 - **Image generation** – Local diffusion models
 - **Music synthesis** – Audio generation from code
 - **Archive memory** – Private vector database per project
 - **Air-gapped by design** – Outbound traffic disabled by default
 
-## RELEASES
+## CHANGELOG
 
-See [RELEASES/](RELEASES/) for detailed release notes.
+**Current status:** v0.1.0 released with core runtime, daemon service, and Windows support. Building towards v1.0-preview.
 
-Latest: [v0.1.0](RELEASES/v0.1.0.md) (2026-02-14)
+See [CHANGELOG.md](CHANGELOG.md) for full release history and details.
 
 ## PLATFORM SUPPORT
 
@@ -36,7 +39,7 @@ Latest: [v0.1.0](RELEASES/v0.1.0.md) (2026-02-14)
 
 This repository contains release notes, documentation, and issue tracking for Nyxialith.
 
-- **Website**: https://nyxia.ai/nyxialith
+- **Website**: https://www.nyxia.ai/nyxialith
 
 ## LICENSE
 
