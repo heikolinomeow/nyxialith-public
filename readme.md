@@ -6,7 +6,7 @@ Open-source AI operating system.
 
 | Status          | Version       | Date       |
 |-----------------|---------------|------------|
-| Current build   | v0.1          | 14.02.2026 |
+| Current build   | v0.1.1        | 19.02.2026 |
 | Public launch   | v1.0-preview  | Q1 2026    |
 
 ## OVERVIEW
@@ -25,7 +25,7 @@ Nyxialith is a local-first AI operating system that runs entirely on your hardwa
 
 ## CHANGELOG
 
-**Current status:** v0.1.0 released with core runtime, daemon service, and Windows support. Building towards v1.0-preview.
+**Current status:** v0.1.1 released with advanced sampling, chat templates, streaming reliability, and sidecar readiness features. Building towards v1.0-preview.
 
 See [CHANGELOG.md](CHANGELOG.md) for full release history and details.
 
