@@ -3,6 +3,58 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.2.0] - 2026-03-15
+
+### Added
+
+- **Persistent Chat Sessions (SQLite Backend)**:
+  - **Database Integration**: Migrated conversation history from ephemeral frontend state to a robust SQLite persistence layer (`sessions` & `session_messages`).
+  - **Context-Aware Memory**: Implemented automatic session creation and message ingestion in the backend `RunManager`.
+  - **Session Management**: Full lifecycle support for listing, selecting, and continuing prior conversations from the Consult sidebar.
+  - **API Correction**: Standardized Axum route path parameters for consistent session message retrieval.
+
+- **Consult UX: Logic Exchange Paradigm**:
+  - **Visual Exchange Grouping**: Redesigned message rendering into "Exchanges" (User Input + Assistant Response) linked by vertical Logic Threads (dashed connectors).
+  - **Temporal Masking**: Added a dynamic top-fade mask to the chat history to focus the operator's attention on the active conversation exchange.
+  - **Command-Line Aesthetics**: Prefixed user prompts with `>>` and integrated high-fidelity timestamps for every message.
+  - **Paragraph & Line-Height Polish**: Refined `terminalRenderer` logic to handle multi-paragraph responses with natural spacing and improved legibility.
+  - **Stateful Interaction**: Added a global "Nyxialith OS" system prompt and improved auto-scrolling behavior for long responses.
+
+- **Nyxialith OS: Active Session & Interface Overhaul**:
+  - **Brand Initiation**: Formal introduction of Nyxialith OS. Updated window titles, metadata, and generated fresh application icons (`.ico`, `.icns`, `.png`) from core assets.
+  - **Active Session Management**: Transitioned from a placeholder sidebar to a fully functional persistence layer.
+    - Supports saving, listing, and loading chat sessions from the SQLite registry.
+    - Integrated "New Chat" workflow with automatic session creation.
+  - **Exchange-Based Chat UX**:
+    - Implemented "Exchanges": Messages are visually paired with a "Logic Link" (dashed thread) connecting user prompts to responses.
+    - Added high-precision timestamps for every message.
+  - **High-Fidelity Interaction**:
+    - **Directive Shift**: Standardized on `SHIFT + ENTER` for sending to accommodate native multiline input.
+    - **Sliding Memory Window**: Implemented a 20-message buffer for context-aware inference.
+    - **Logic Formatting**: Improved Markdown rendering with specific support for paragraphs and line breaks.
+
+- **UI Redesign: Bottom Navigation Paradigm**:
+  - **Global Layout Shift**: Replaced the legacy left sidebar with a streamlined Windows-style bottom navigation bar.
+  - **Icon-Centric UX**: Navigational elements (Home, Consult, Admin) now prioritize symbolic icons for a cleaner, high-density interface. Dashboard and Models have been migrated to the Admin console.
+  - **Brand-Driven Home Experience**: New default landing page featuring Nyxia branding with randomized welcome messaging and pulsing presence animations.
+  - **Tiered Admin Experience**: Unified technical controls into a specialized Admin view.
+    - Features a dedicated internal sidebar for Dashboard, Models, Logs, and Settings.
+    - Refactored `switchView` logic to handle automatic routing between the main bottom nav and admin subviews.
+  - **Consult UI Restructure**: Radically simplified the chat interface for deep focus.
+    - Integrated a sessions sidebar and centered the main conversation flow.
+    - Compact Top Bar displaying the active model status.
+    - Auto-resizing text input limited to 80% viewport height.
+  - **Responsive Layout Stability**: Migrated to a pure Flexbox architecture (`flex: 1`) to ensure views dynamically fill the viewport without overlapping navigation elements.
+
+- **Empty-State Refinement**:
+  - Intelligent status dot and label system that dims and shifts styles when no model is active.
+  - Added Mono-type styling (JetBrains Mono) for technical standby states.
+  - Updated status dot logic to grey-out during healthy idle states.
+
+- **Early Verification**: Implemented immediate model registry scanning on UI initialization to ensure UI state parity with daemon runtime.
+
+- **Animated Home Arrival**: New randomized brand greetings and refined branding animations on the Home landing page.
+
 ## [v0.1.1] - 2026-02-19
 
 - **Advanced Sampling**: Implemented a comprehensive sampler chain including Repetition Penalty, Top-P, and Temperature to prevent loops and improve output quality.
